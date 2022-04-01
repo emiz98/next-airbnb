@@ -1,25 +1,25 @@
-import React from "react";
+import React from 'react'
 
 const SmallCard = ({ img, location, distance }) => {
   return (
     <div
-      className="flex items-center mt-5 space-x-4 md:mr-8 rounded-lg 
-    cursor-pointer hover:bg-gray-100 hover:scale-105
-    transition ease-out duration-200"
+      className="mt-5 flex cursor-pointer items-center space-x-4 
+    rounded-lg transition duration-200
+    ease-out hover:scale-105 hover:bg-gray-100"
     >
       <div>
         <img
-          className="h-16 md:h-20 object-contain rounded-lg"
+          className="h-16 rounded-lg object-contain md:h-20"
           src={img}
           alt="card single"
         />
       </div>
       <div>
-        <h2 className="font-semibold text-lg">{location}</h2>
+        <h2 className="text-lg font-semibold">{location}</h2>
         <h3 className="text-sm">{distance}</h3>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SmallCard;
+export default SmallCard

@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .noselect {
+    -webkit-tap-highlight-color: red;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .hero_title {
+    @apply mb-5 text-2xl font-bold md:text-3xl;
+  }
+  footer > div > p {
+    @apply cursor-pointer text-sm hover:underline;
+  }
+  footer > div {
+    @apply space-y-4 p-5 text-base text-gray-800 md:pl-20;
+  }
+}
