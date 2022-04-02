@@ -12,7 +12,7 @@ const ShopCard = () => {
         </h3>
         <button
           className="mt-5 rounded-lg bg-black px-4
-    py-2 text-sm text-white transition ease-in-out hover:bg-gray-800"
+    py-2 text-sm text-white transition ease-in-out hover:bg-red-400"
         >
           Learn more
         </button>

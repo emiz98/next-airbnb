@@ -1,3 +1,12 @@
+.rdrDateRangePickerWrapper {
+  display: block !important;
+}
+@media screen and (min-width: 480px) {
+  .rdrDateRangePickerWrapper {
+    display: inline-flex !important;
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

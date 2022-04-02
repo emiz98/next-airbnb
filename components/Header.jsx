@@ -24,15 +24,25 @@ const Header = ({ placeholder }) => {
   }
 
   return (
-    <header className="sticky top-0 z-[9999] bg-white p-3 shadow-md md:p-5 md:px-10">
+    <header
+      className={`sticky top-0 z-[9999] bg-white p-3 shadow-md md:p-5 md:px-10 ${
+        searchInput != '' && 'h-screen overflow-scroll'
+      }`}
+    >
       <div className="flex items-center justify-between">
         <img
           onClick={() => router.push('/')}
-          className="w-28 cursor-pointer object-contain md:w-32"
+          className="hidden w-28 cursor-pointer object-contain md:inline-flex md:w-32"
           src="/logo.png"
           alt="logo"
         />
-        <div className="hidden max-w-2xl items-center rounded-full py-2 md:flex md:border-2 md:shadow-sm lg:flex-grow">
+        <img
+          onClick={() => router.push('/')}
+          className="w-10 cursor-pointer object-contain md:hidden md:w-32"
+          src="/logo_small.png"
+          alt="logo_small"
+        />
+        <div className="max-w-2xl items-center rounded-full py-2 md:flex md:border-2 md:shadow-sm lg:flex-grow">
           <input
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
@@ -43,7 +53,7 @@ const Header = ({ placeholder }) => {
           {searchInput && (
             <span
               onClick={() => setSearchInput('')}
-              className="mr-3 flex cursor-pointer items-center"
+              className="mr-3 hidden cursor-pointer items-center md:flex"
             >
               <Close className="text-lg text-gray-600" />
             </span>
