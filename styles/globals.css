@@ -16,4 +16,8 @@
   footer > div {
     @apply space-y-4 p-5 text-base text-gray-800 md:pl-20;
   }
+  .sortBtn {
+    @apply cursor-pointer rounded-full border px-4 py-2 transition-all
+    ease-in-out hover:shadow-lg active:scale-95;
+  }
 }
