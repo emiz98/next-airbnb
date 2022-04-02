@@ -31,7 +31,7 @@ const Search = ({ searchResults }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header placeholder={`${location} | ${range} | ${noOfGuests} guests`} />
-      <main className="flex flex-col">
+      <main className="mx-auto flex max-w-[110rem] flex-col">
         <section className="flex-grow p-3 pt-14 md:p-5 md:px-10">
           <p className="ml-2 select-none text-xs">
             300+ Stays -
