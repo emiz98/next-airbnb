@@ -9,11 +9,15 @@ const Search = () => {
   const router = useRouter()
   const { location, startDate, endDate, noOfGuests } = router.query
 
-  const formattedStartDate = format(new Date(startDate), 'dd MMMM yy')
-  const formattedEndDate = format(new Date(endDate), 'dd MMMM yy')
+  var formattedStartDate
+  var formattedEndDate
+  if (startDate && endDate) {
+    formattedStartDate = format(new Date(startDate), 'dd MMMM yy')
+    formattedEndDate = format(new Date(endDate), 'dd MMMM yy')
+  }
+
   const range = `${formattedStartDate} - ${formattedEndDate}`
 
-  console.log(router.query)
   return (
     <div className="">
       <Head>
