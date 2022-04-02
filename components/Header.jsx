@@ -69,14 +69,14 @@ const Header = ({ placeholder }) => {
           <span className="hidden cursor-pointer hover:underline lg:inline-flex">
             Become a host
           </span>
-          <Language className="hidden md:inline-flex" />
+          <Language className="hidden lg:inline-flex" />
           <div
-            className="flex items-center space-x-3 rounded-full border border-gray-300
-        p-1 shadow-sm md:border-2 md:p-2"
+            className="flex items-center space-x-3 rounded-full border-gray-300 p-1
+        shadow-sm md:border-2 md:p-2 lg:border"
           >
             <Menu className="ml-2 cursor-pointer transition ease-out hover:scale-110" />
             <img
-              className="w-10 cursor-pointer rounded-full transition ease-out hover:scale-105"
+              className="hidden w-10 cursor-pointer rounded-full transition ease-out hover:scale-105 lg:inline-flex"
               src="/avatar.png"
               alt="avatar"
             />
