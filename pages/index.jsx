@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 import LargeCard from '../components/LargeCard'
 import SingleCard from '../components/SingleCard'
+import ShopCard from '../components/ShopCard'
 import SmallCard from '../components/SmallCard'
 
 const Home = ({ exploreData, cardsData }) => {
@@ -33,6 +34,7 @@ const Home = ({ exploreData, cardsData }) => {
             ))}
           </div>
         </section>
+        <ShopCard />
         <section>
           <h2 className="hero_title">Live Anywhere</h2>
           <div className="grid grid-cols-2 md:grid-cols-4">

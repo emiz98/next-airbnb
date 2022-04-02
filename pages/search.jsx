@@ -48,8 +48,10 @@ const Search = ({ searchResults }) => {
             Stays in {location}
           </h1>
           <div className="mb-3 hidden select-none items-center space-x-3 whitespace-nowrap text-gray-800 md:flex">
+            <button className="sortBtn border-2 border-red-400 text-red-400">
+              Type of Place
+            </button>
             <button className="sortBtn">Cancellation Flexibility</button>
-            <button className="sortBtn">Type of Place</button>
             <button className="sortBtn">Price</button>
             <button className="sortBtn">Rooms and Beds</button>
             <button className="sortBtn">More Filters</button>
