@@ -4,8 +4,9 @@ import Footer from '../components/Footer'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { format } from 'date-fns'
+import LocationCard from '../components/LocationCard'
 
-const Search = () => {
+const Search = ({ searchResults }) => {
   const router = useRouter()
   const { location, startDate, endDate, noOfGuests } = router.query
 
@@ -40,6 +41,25 @@ const Search = () => {
             <button className="sortBtn">Rooms and Beds</button>
             <button className="sortBtn">More Filters</button>
           </div>
+          <div className="flex flex-col gap-y-2">
+            {searchResults.map(
+              (
+                { img, location, title, description, star, price, total },
+                i
+              ) => (
+                <LocationCard
+                  key={i}
+                  img={img}
+                  location={location}
+                  title={title}
+                  description={description}
+                  star={star}
+                  price={price}
+                  total={total}
+                />
+              )
+            )}
+          </div>
         </section>
       </main>
       <Footer />
@@ -48,3 +68,15 @@ const Search = () => {
 }
 
 export default Search
+
+export async function getServerSideProps() {
+  const searchResults = await fetch('https://jsonkeeper.com/b/5NPS').then(
+    (res) => res.json()
+  )
+
+  return {
+    props: {
+      searchResults,
+    },
+  }
+}
