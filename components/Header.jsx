@@ -72,7 +72,7 @@ const Header = ({ placeholder }) => {
           <Language className="hidden lg:inline-flex" />
           <div
             className="flex items-center space-x-3 rounded-full border-gray-300 p-1
-        shadow-sm md:border-2 md:p-2 lg:border"
+        md:border-2 md:p-2 md:shadow-sm lg:border"
           >
             <Menu className="ml-2 cursor-pointer transition ease-out hover:scale-110" />
             <img
