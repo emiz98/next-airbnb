@@ -24,7 +24,7 @@ const Header = ({ placeholder }) => {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-white p-3 shadow-md md:p-5 md:px-10">
+    <header className="sticky top-0 z-[9999] bg-white p-3 shadow-md md:p-5 md:px-10">
       <div className="flex items-center justify-between">
         <img
           onClick={() => router.push('/')}
