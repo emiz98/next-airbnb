@@ -24,7 +24,7 @@ const Home = ({ exploreData, cardsData }) => {
             className="grid grid-cols-1
           gap-x-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
           >
-            {exploreData?.map(({ img, distance, location }) => (
+            {exploreData.locations.map(({ img, distance, location }) => (
               <SmallCard
                 key={img}
                 img={img}
@@ -38,7 +38,7 @@ const Home = ({ exploreData, cardsData }) => {
         <section>
           <h2 className="hero_title">Live Anywhere</h2>
           <div className="grid grid-cols-2 md:grid-cols-4">
-            {cardsData?.map(({ title, img }) => (
+            {cardsData.stays.map(({ title, img }) => (
               <LargeCard key={img} title={title} img={img} />
             ))}
           </div>
@@ -57,13 +57,13 @@ const Home = ({ exploreData, cardsData }) => {
 
 export default Home
 
-export async function getStaticProps() {
-  const exploreData = await fetch('https://jsonkeeper.com/b/4G1G').then((res) =>
-    res.json()
-  )
+export async function getServerSideProps() {
+  const exploreData = await fetch(
+    'http://localhost:3000/api/getlocations'
+  ).then((res) => res.json())
 
-  const cardsData = await fetch('https://jsonkeeper.com/b/VHHT').then((res) =>
-    res.json()
+  const cardsData = await fetch('http://localhost:3000/api/getstays').then(
+    (res) => res.json()
   )
 
   return {

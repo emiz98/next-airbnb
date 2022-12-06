@@ -57,7 +57,7 @@ const Search = ({ searchResults }) => {
             <button className="sortBtn">More Filters</button>
           </div>
           <div className="flex flex-col gap-y-2">
-            {searchResults.map(
+            {searchResults.hotels.map(
               (
                 { img, location, title, description, star, price, total },
                 i
@@ -77,7 +77,7 @@ const Search = ({ searchResults }) => {
           </div>
         </section>
         <section className="p-3 pt-6 md:p-5 md:px-10 md:pt-14">
-          <DynamicMapWithNoSSR locations={searchResults} />
+          <DynamicMapWithNoSSR locations={searchResults.hotels} />
         </section>
       </main>
       <Footer />
@@ -88,7 +88,7 @@ const Search = ({ searchResults }) => {
 export default Search
 
 export async function getServerSideProps() {
-  const searchResults = await fetch('https://jsonkeeper.com/b/5NPS').then(
+  const searchResults = await fetch('http://localhost:3000/api/gethotels').then(
     (res) => res.json()
   )
 
